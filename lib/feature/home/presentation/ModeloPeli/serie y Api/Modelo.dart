@@ -42,7 +42,7 @@ class Modelo extends Equatable {
     calificacion: (json['vote_average'] ?? 0).toDouble(),
     genero: (json['genre_ids'] as List?)?.join(', ') ?? '',
     fechaLanzamiento: json['release_date'] ?? json['first_air_date'],
-    tipo: json['media_type'] ?? (json['title'] != null ? 'pelicula' : 'serie'),
+    tipo: json['media_type'] ?? (json['title'] != null ? 'pelicula' : 'serie'), 
   );
 }
 }

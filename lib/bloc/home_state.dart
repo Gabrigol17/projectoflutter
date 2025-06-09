@@ -10,13 +10,15 @@ sealed class HomeState extends Equatable {
 final class HomeInitial extends HomeState {}
 final class HomeLoading extends HomeState {}
 final class HomeSuccess extends HomeState {
-   final List<Modelo> modelos;
+  final List<Modelo> peliculas;
+  final List<Modelo> series;
 
-  const HomeSuccess({required this.modelos});
+  const HomeSuccess({required this.peliculas, required this.series});
 
   @override
-  List<Object> get props => [modelos];
+  List<Object> get props => [peliculas, series];
 }
+
 final class HomeFailure extends HomeState {
   final String mensaje;
   HomeFailure({required this.mensaje});

@@ -11,14 +11,19 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   HomeBloc({required this.apiService}) : super(HomeInitial()) {
     on<CargaDeContenido>((event, emit) async {
-      emit(HomeLoading());
-      try {
-        final contenido = await apiService.obtenerContenidoFiltrado();
-        emit(HomeSuccess(modelos: contenido)); 
-      } catch (error) {
-        emit(HomeFailure(mensaje: 'Error al cargar el contenido'));
-      }
-    });
+  emit(HomeLoading());
+  try {
+    final contenido = await apiService.obtenerContenidoFiltrado();
+
+   
+    final peliculas = contenido.where((item) => item.tipo == 'pelicula').toList();
+    final series = contenido.where((item) => item.tipo == 'serie').toList();
+
+    emit(HomeSuccess(peliculas: peliculas, series: series)); 
+  } catch (error) {
+    emit(HomeFailure(mensaje: 'Error al cargar el contenido'));
+  }
+});
+
   }
 }
-  

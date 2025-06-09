@@ -18,7 +18,7 @@ class Success extends StatelessWidget {
             // Fondo de imagen
             SizedBox.expand(
               child: Image.asset(
-                'fondo.jpeg',
+                'assets/fondo.jpeg',
                 fit: BoxFit.cover,
               ),
             ),
@@ -109,7 +109,7 @@ class Success extends StatelessWidget {
                                   itemCount: listaPeliculas.length,
                                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 2,
-                                    childAspectRatio: 0.7,
+                                    childAspectRatio: 0.6,
                                   ),
                                   itemBuilder: (context, index) {
                                     final pelicula = listaPeliculas[index];

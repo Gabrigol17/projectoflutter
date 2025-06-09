@@ -13,7 +13,7 @@ class Success extends StatelessWidget {
             // Fondo de imagen
             SizedBox.expand(
               child: Image.asset(
-                'assets/images/background_cinema.jpg',
+                'fondo.jpeg', 
                 fit: BoxFit.cover,
               ),
             ),

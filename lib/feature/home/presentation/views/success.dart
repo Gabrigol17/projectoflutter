@@ -138,7 +138,7 @@ class Success extends StatelessWidget {
                                   itemCount: listaSeries.length,
                                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 2,
-                                    childAspectRatio: 0.7,
+                                    childAspectRatio: 0.6,
                                   ),
                                   itemBuilder: (context, index) {
                                     final serie = listaSeries[index];

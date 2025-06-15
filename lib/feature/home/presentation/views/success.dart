@@ -146,7 +146,7 @@ class Success extends StatelessWidget {
                                       onTap: () {
                                         Navigator.pushNamed(
                                           context,
-                                          '/detalle',
+                                          '/data',
                                           arguments: serie,
                                         );
                                       },

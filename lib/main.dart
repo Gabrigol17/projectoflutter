@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:projectoflutter/bloc/home_bloc.dart';
+import 'package:projectoflutter/feature/home/presentation/ModeloPeli/serie%20y%20Api/Modelo.dart';
 import 'package:projectoflutter/feature/home/presentation/ModeloPeli/serie%20y%20Api/api.dart';
+import 'package:projectoflutter/feature/home/presentation/views/DetalleContenidoView.dart';
 import 'package:projectoflutter/feature/home/presentation/views/fealure.dart';
 import 'package:projectoflutter/feature/home/presentation/views/initial.dart';
 import 'package:projectoflutter/feature/home/presentation/views/loading.dart';
@@ -33,6 +35,15 @@ class MyApp extends StatelessWidget {
         '/success': (context) => Success(), // Vista de éxito
         '/failure': (context) => Failure(), // Vista de fallo
       },
-    ); 
+      onGenerateRoute: (settings) {
+        if (settings.name == '/data'){
+          final contenido = settings.arguments as Modelo;
+          return MaterialPageRoute(
+            builder: (context) => DetalleContenidoView(contenido: contenido), // Pasamos los datos a la vista de éxito
+          );
+        }
+        return null; // Si no hay coincidencia, devolvemos null
+      },
+    );
   }
 }

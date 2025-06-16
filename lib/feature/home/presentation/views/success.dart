@@ -109,7 +109,7 @@ class Success extends StatelessWidget {
                                   itemCount: listaPeliculas.length,
                                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 2,
-                                    childAspectRatio: 0.6,
+                                    childAspectRatio: 0.55,
                                   ),
                                   itemBuilder: (context, index) {
                                     final pelicula = listaPeliculas[index];

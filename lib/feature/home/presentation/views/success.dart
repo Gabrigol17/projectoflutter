@@ -123,9 +123,19 @@ class Success extends StatelessWidget {
                                       },
                                       child: Card(
                                         child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Image.network(pelicula.imagen ?? ''),
-                                            Text(pelicula.titulo ?? ''),
+                                            Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Text(
+                                              pelicula.titulo ?? '',
+                                              maxLines: 2,
+                                              overflow: TextOverflow.ellipsis,
+                                              style: const TextStyle(
+                                                fontWeight: FontWeight.bold),
+                                            )
+                                          ),
                                           ],
                                         ),
                                       ),
@@ -138,7 +148,7 @@ class Success extends StatelessWidget {
                                   itemCount: listaSeries.length,
                                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 2,
-                                    childAspectRatio: 0.6,
+                                    childAspectRatio: 0.55,
                                   ),
                                   itemBuilder: (context, index) {
                                     final serie = listaSeries[index];
@@ -152,9 +162,19 @@ class Success extends StatelessWidget {
                                       },
                                       child: Card(
                                         child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Image.network(serie.imagen ?? ''),
-                                            Text(serie.titulo ?? ''),
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: Text(
+                                                serie.titulo ?? '',
+                                                maxLines: 2,
+                                                overflow: TextOverflow.ellipsis,
+                                                style: const TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                              ),
+                                            ),
                                           ],
                                         ),
                                       ),
